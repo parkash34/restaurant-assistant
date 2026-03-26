@@ -99,6 +99,8 @@ def ask_ai(chat_history, customer_name):
         response.raise_for_status()
         raw = response.json()["choices"][0]["message"]["content"]
         return json.loads(raw)
+    except json.JSONDecodeError:
+        return {"category": "Error", "answer": "AI returned invalid format. Please try again.", "follow_up": ""}
     except requests.exceptions.Timeout:
         return "Request timed out. Please try again."
     except requests.exceptions.ConnectionError:
@@ -126,7 +128,7 @@ def restaurant_chat(messages: Message):
     memory[session_id].append({"role":"user", "content": user_message})
     ai_reply = ask_ai(memory[session_id], customer_name)
 
-    if "error" not in ai_reply.get("category","").lower():
+    if isinstance(ai_reply, dict):
         memory[session_id].append({"role":"assistant", "content": json.dumps(ai_reply)})
     return ai_reply
 
