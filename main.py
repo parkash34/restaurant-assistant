@@ -25,7 +25,7 @@ class Message(BaseModel):
 def build_system_prompt(customer_name):
     today_date = date.today().strftime("%Y-%m-%d")
     today_special = "Revolutional Day"
-    available_tables = "Tables 2, 5 and 8"
+    available_tables = "Tables 3, 5 and 8"
     return f""" 
     You are Muzo, a restaurant assistant for Pizza Hut. 
 
