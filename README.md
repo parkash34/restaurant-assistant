@@ -104,3 +104,8 @@ API_KEY=your_groq_api_key_here
 - The assistant only answers Pizza Hut related questions
 - Each session maintains its own conversation history
 - Conversation history resets when the server restarts
+
+
+## 👤 Author
+
+**Om Parkash** — [LinkedIn](https://www.linkedin.com/in/om-parkash-a93a87275) · [GitHub](https://github.com/parkash34)
