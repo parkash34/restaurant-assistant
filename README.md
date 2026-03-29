@@ -8,7 +8,7 @@ structured, consistent, and context-aware responses to customer queries.
 
 - Structured JSON responses with category, answer, and follow-up
 - Dynamic context injection — today's date, specials, and available tables
-- Multi-session conversation memory — each customer has separate chat history
+- Multi-session conversation memory — each customer has a separate chat history
 - Few-shot prompting for consistent response patterns
 - Customer personalization — assistant knows the customer's name
 - Input validation and comprehensive error handling
@@ -29,7 +29,7 @@ structured, consistent, and context-aware responses to customer queries.
 ```
 week5-project/
 │
-├── env/               
+├── .venv/               
 ├── main.py            
 ├── .env               
 └── requirements.txt   
@@ -42,10 +42,10 @@ week5-project/
 git clone https://github.com/yourusername/pizza-hut-assistant
 ```
 
-2. Create and activate virtual environment
+2. Create and activate a virtual environment
 ```
-python -m venv env
-env\Scripts\activate
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
 3. Install dependencies
@@ -53,7 +53,7 @@ env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Create `.env` file and add your Groq API key
+4. Create a `.env` file and add your Groq API key
 ```
 API_KEY=your_groq_api_key_here
 ```
@@ -80,7 +80,7 @@ uvicorn main:app --reload
 ```json
 {
     "category": "Menu",
-    "answer": "Yes we have a family deal!",
+    "answer": "Yes, we have a family deal!",
     "follow_up": "Would you like to know more details?"
 }
 ```
@@ -101,12 +101,10 @@ API_KEY=your_groq_api_key_here
 ## Notes
 
 - Never commit your `.env` file to GitHub
-- The assistant only answers Pizza Hut related questions
+- The assistant only answers Pizza Hut-related questions
 - Each session maintains its own conversation history
 - Conversation history resets when the server restarts
 
-
-## 👤 Author
 
 ## 👤 Author
 
